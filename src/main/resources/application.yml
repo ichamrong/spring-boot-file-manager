@@ -1,0 +1,54 @@
+# Server configuration
+server:
+  port: 8081  # Port on which the application runs
+
+  servlet:
+    multipart:
+      max-file-size: 50MB  # Max size for individual file uploads
+      max-request-size: 100MB  # Max size for full multipart requests
+
+# Spring application and service configuration
+spring:
+  application:
+    name: file-manager  # Application name
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/filedb  # PostgreSQL connection URL
+    username: fileuser  # DB username
+    password: filepass  # DB password
+    driver-class-name: org.postgresql.Driver  # JDBC driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none  # Disable schema auto-generation (use Flyway)
+    show-sql: true  # Show SQL in logs
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect  # Dialect for PostgreSQL
+    open-in-view: false  # Avoid open session in view
+
+  flyway:
+    enabled: false  # Enable Flyway migrations
+    baseline-on-migrate: false  # Support existing DB schema
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/file-service  # Keycloak issuer URI
+          jwk-set-uri: http://keycloak:8080/realms/file-service/protocol/openid-connect/certs  # JWK set URI
+
+# MinIO storage config
+minio:
+  url: http://minio:9000  # MinIO server
+  access-key: minio
+  secret-key: minio123
+  bucket: uploads
+  region: us-east-1
+
+# Logging config
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.ichamrong: DEBUG

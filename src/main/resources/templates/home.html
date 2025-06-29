@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-50 text-gray-800">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Boot File Manager</title>
+
+  <!-- Nunito Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="p-6">
+<!-- Header -->
+<header class="text-center mb-8">
+  <h1 class="text-4xl font-bold text-blue-600">Spring Boot File Manager</h1>
+  <p class="text-gray-600 text-lg">Secure file upload and management with Keycloak, MinIO, and Swagger</p>
+</header>
+
+<!-- GitHub Section -->
+<div class="text-center mb-10">
+  <a
+      href="https://github.com/ichamrong/spring-boot-file-manager"
+      class="inline-flex items-center gap-2 bg-gray-900 text-white py-2 px-4 rounded hover:bg-gray-800"
+      target="_blank"
+  >
+    <i data-lucide="github"></i>
+    <span>View on GitHub</span>
+  </a>
+</div>
+
+<!-- Tool Cards -->
+<section class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+  <!-- Swagger UI -->
+  <a href="/swagger-ui/index.html" target="_blank" class="flex items-center gap-4 p-6 rounded-lg shadow hover:shadow-xl bg-white border hover:border-blue-500 transition">
+    <i data-lucide="file-text" class="w-8 h-8 text-blue-500"></i>
+    <span class="text-lg font-medium">Swagger UI</span>
+  </a>
+
+  <!-- MinIO -->
+  <a href="http://localhost:9000" target="_blank" class="flex items-center gap-4 p-6 rounded-lg shadow hover:shadow-xl bg-white border hover:border-yellow-500 transition">
+    <i data-lucide="folder" class="w-8 h-8 text-yellow-500"></i>
+    <span class="text-lg font-medium">MinIO Console</span>
+  </a>
+
+  <!-- Keycloak -->
+  <a href="http://localhost:8080" target="_blank" class="flex items-center gap-4 p-6 rounded-lg shadow hover:shadow-xl bg-white border hover:border-purple-500 transition">
+    <i data-lucide="shield" class="w-8 h-8 text-purple-500"></i>
+    <span class="text-lg font-medium">Keycloak Admin</span>
+  </a>
+</section>
+
+<!-- Footer -->
+<footer class="text-center text-gray-500 text-sm mt-16">
+  &copy; 2025 ichamrong.com | Contact: <a href="mailto:info@ichamrong.com" class="text-blue-500">info@ichamrong.com</a>
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
