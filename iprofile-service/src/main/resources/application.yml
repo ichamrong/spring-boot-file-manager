@@ -1,0 +1,13 @@
+# App Configuration
+server:
+  port: 8080
+spring:
+  application:
+    name: iprofile-service
+
+  # Database Configuration
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/iprofile_db
+    username: iprofile
+    password: P@ssw0rd$123

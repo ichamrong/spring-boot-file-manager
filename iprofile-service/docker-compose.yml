@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: my_postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: iprofile
+      POSTGRES_PASSWORD: P@ssw0rd$123
+      POSTGRES_DB: iprofile_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
